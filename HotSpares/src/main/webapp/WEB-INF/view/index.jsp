@@ -4,14 +4,17 @@
 <head>
 <meta http-equiv="Content-Type" content=text.html;>
   <title>Home-HotSpares</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
-  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/style.css'/>"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
+  
+  
   
  	
   <!-- Slide Style -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
 
 <style>
 .mySlides {display:none;}
@@ -52,80 +55,10 @@ function carousel() {
 <!-- Image Slider Finished -->
 <br>
 
-<!-- Image Thumbnails -->
-<div class="container">
-  
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="#" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier1.jpg' />" alt="Lights" style="width:100">
-          <div class="caption">
-            <p>Ceat Vertigo Sport P100/90 - 17 Tubeless Bike Tyre, Rear </p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier2.jpg' />" alt="Nature" style="width:100">
-          <div class="caption">
-            <p>Apollo Actizip R3 100/90-17 Tubeless Bike Tyre</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="#" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier1.jpg' />" alt="Fjords" style="width:100">
-          <div class="caption">
-            <p>Ceat Vertigo Sport P100/90 - 17 Tubeless Bike Tyre, Rear </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="#" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier2.jpg' />" alt="Lights" style="width:100">
-          <div class="caption">
-            <p>Apollo Actizip R3 100/90-17 Tubeless Bike Tyre</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier2.jpg' />" alt="Nature" style="width:100">
-          <div class="caption">
-            <p>Ceat Vertigo Sport P100/90 - 17 Tubeless Bike Tyre, Rear</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="#" target="_blank">
-          <img src="<c:url value='/resource/bootstrap/images/tier2.jpg' />" alt="Fjords" style="width:100">
-          <div class="caption">
-            <p>Apollo Actizip R3 100/90-17 Tubeless Bike Tyre.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Image Thumbnails Finished -->
 <%@include file="footer.jsp" %>
-
+						<script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"></script>
 </body>
 </html>

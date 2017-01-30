@@ -6,19 +6,20 @@
   <title>Accounts-HotSpares</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/loginstyle.css'/>"/>
  	<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/logindemo.css'/>"/>
  	<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/loginanimate-custom.css'/>"/>
-  <script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script>
-  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/footer.css'/>"/>
+  
+  
    
 
 
 </head>
 <body>
 <%@include file="header.jsp" %>
-
+<br><hr>
 <!-- Sign IN Form Begins -->
 
 <div class="container">
@@ -31,7 +32,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                            <form  action="./loginCheck" method="post" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
@@ -82,12 +83,13 @@
 									<a href="#tologin" class="to_register"> Go and log in </a>
 								</p>
                             </form>
+                            
                         </div>
 						
                     </div>
                 </div>  
             </section>
         </div>
-<%@include file="footer.jsp" %>
+        <script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script>
 </body>
 </html>

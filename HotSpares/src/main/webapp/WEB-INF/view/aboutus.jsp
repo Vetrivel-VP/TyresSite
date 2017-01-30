@@ -8,13 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
  
- 	<%-- <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/aboutus.css'/>"/> --%>
- 	<style>
- 	.img-center {
-	margin: 0 auto;
-}
- 	
- 	</style>
+ 	<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/aboutus.css'/>"/>
  </head>
 <body>
 <%@include file="header.jsp" %>  
