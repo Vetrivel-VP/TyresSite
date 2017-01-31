@@ -1,35 +1,26 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
 <meta http-equiv="Content-Type" content=text.html;>
-  <title>Home-HotSpares</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
+  <title>HOME-HotSpares</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
+ <!-- Image Slider Style -->
+ <style>
+ .mySlides {display:none;} 
   
-  
-  
- 	
-  <!-- Slide Style -->
- 
-
-<style>
-.mySlides {display:none;}
 </style>
-<!-- <SCRIPT language=JavaScript>
-var message = "function disabled"; 
-function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; } 
-if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } } 
-document.onmousedown = rtclickcheck;
-</SCRIPT> -->
-</head>
+ </head>
 <body>
+<%@include file="header.jsp" %>
 
- <%@include file="header.jsp" %>
 <!-- Image Slider -->
+
+
+
 
 <div class="w3-content w3-section" style="max-width:100%">
   <img class="mySlides" src="<c:url value='/resource/bootstrap/images/slide1.jpg' />" style="width:100%">
@@ -53,12 +44,9 @@ function carousel() {
 }
 </script>
 <!-- Image Slider Finished -->
-<br>
+<br> 
 
 
-
-<!-- Image Thumbnails Finished -->
-<%@include file="footer.jsp" %>
-						<script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"></script>
+        <script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script>
 </body>
 </html>

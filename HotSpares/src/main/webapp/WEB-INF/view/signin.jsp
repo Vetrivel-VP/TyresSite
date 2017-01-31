@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
 <meta http-equiv="Content-Type" content=text.html;>
   <title>Accounts-HotSpares</title>
@@ -8,88 +8,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
- <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/loginstyle.css'/>"/>
- 	<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/logindemo.css'/>"/>
- 	<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/loginanimate-custom.css'/>"/>
+ <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/style.css'/>"/>
   
-  
-   
-
-
-</head>
+        
+ 
+ </head>
 <body>
 <%@include file="header.jsp" %>
-<br><hr>
+
 <!-- Sign IN Form Begins -->
+<div class="cont_principal">
 
-<div class="container">
-            
-            
-            <section>				
-                <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  action="./loginCheck" method="post" autocomplete="on"> 
-                                <h1>Log in</h1> 
-                                <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="usename or email"/>
-                                </p>
-                                <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="password" /> 
-                                </p>
-                                <p class="keeplogin"> 
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Keep me logged in</label>
-								</p>
-                                <p class="login button"> 
-                                    <input type="submit" value="Login" /> 
-								</p>
-                                <p class="change_link">
-									Not a member yet ?
-									<a href="#toregister" class="to_register">Sign Up</a>
-								</p>
-                            </form>
-                        </div>
+  <div class="cont_centrar">
+  <div class="cont_login">
+    <form action="">
+    <div class="cont_tabs_login">
+      <ul class='ul_tabs'>
+        <li class="active"><a href="#" onclick="sign_in()">SIGN IN</a>
+        <span class="linea_bajo_nom"></span>
+        </li>
+        <li><a href="#up" onclick="sign_up()">SIGN UP</a><span class="linea_bajo_nom"></span>
+        </li>
+      </ul>
+      </div>
+  <div class="cont_text_inputs">
+      <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" />
+    
+    <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="emauil_us" />
 
-                        <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="email"/> 
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Confirm password"/>
-                                </p>
-                                <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
-								</p>
-                                <p class="change_link">  
-									Already a member ?
-									<a href="#tologin" class="to_register"> Go and log in </a>
-								</p>
-                            </form>
-                            
-                        </div>
-						
-                    </div>
-                </div>  
-            </section>
-        </div>
-        <script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script>
+    <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" />  
+   <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
+    
+    <a href="#" class="link_forgot_pass d_block" >Forgot Password ?</a>    
+<div class="terms_and_cons d_none">
+    <p><input type="checkbox" name="terms_and_cons" /> <label for="terms_and_cons">Accept  Terms and Conditions.</label></p>
+  
+    </div>
+      </div>
+<div class="cont_btn">
+     <button class="btn_sign">SIGN IN</button>
+      
+      </div>
+      
+    </form>
+    </div>
+    
+  </div>
+  
+
+</div>
+		<script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script> 
+		<script src="<c:url value='/resource/bootstrap/js/index.js'/>"/></script>
 </body>
 </html>
