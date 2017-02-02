@@ -28,26 +28,31 @@ public class HomeController {
 	}
 
 @RequestMapping("/contactus")
-public String gotoHome1()
+public String contactus()
 {
 	return "contactus";
 }
 @RequestMapping("/aboutus")
 
-public String gotoHome2()
+public String aboutus()
 {
 	return "aboutus";
 }
 
 @RequestMapping("/index")
-public String gotoHome3()
+public String gotoHome1()
 {
 	return "index";
 }
 @RequestMapping("/signin")
-public String gotoHome4()
+public String signin()
 {
 	return "signin";
+}
+@RequestMapping("/signup")
+public String signup()
+{
+	return "signup";
 }
 
 @RequestMapping(value="loginCheck",method=RequestMethod.POST)

@@ -8,41 +8,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
+ <link rel="stylesheet" href="<c:url value='/resource/saracss/slider.css/' /> "/>
  <!-- Image Slider Style -->
- <style>
- .mySlides {display:none;} 
-  
-</style>
+ 
  </head>
 <body>
 <%@include file="header.jsp" %>
 
 <!-- Image Slider -->
-
-
-
-
-<div class="w3-content w3-section" style="max-width:100%">
-  <img class="mySlides" src="<c:url value='/resource/bootstrap/images/slide1.jpg' />" style="width:100%">
-  <img class="mySlides" src="<c:url value='/resource/bootstrap/images/slide2.jpg' />" style="width:100%">
+<div class="container-fluid-full">
+<br>
+<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+    </ol>
+    
+   									 <!-- Carousel items -->
+   								 
+    <div class="carousel-inner carousel-zoom">
+        <div class="active item"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/slide1.jpg'/>" alt="first" style="width:1380px;height:460px"/>
+        </div>
+        <div class="item"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/slide2.jpg'/>" alt="second" style="width:1380px;height:460px"/>
+        </div>
+        <div class="item"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/slide1.jpg'/>" alt="third" style="width:1380px;height:460px"/>
+        </div>
+        <div class="item"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/slide2.jpg'/>" alt="fourth" style="width:1380px;height:460px"/>
+        </div>
+        <div class="item"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/slide1.jpg'/>" alt="fourth" style="width:1380px;height:460px"/>
+        </div>
+       </div>
+    							 	<!-- Carousel nav -->
+    							 
+    <a class="carousel-control left"  href="#carousel" data-slide="prev"></a>
+    <a class="carousel-control right"  href="#carousel" data-slide="next"></a>
+</div>
 </div>
 
-<script>
-var myIndex = 0;
-carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 3000); // Change image every 3 seconds
-}
-</script>
+
+
 <!-- Image Slider Finished -->
 <br> 
 

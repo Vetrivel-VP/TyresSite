@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content=text.html;>
-  <title>Accounts-HotSpares</title>
+  <title>Signin-HotSpares</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
- <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/style.css'/>"/>
+
   
         
  
@@ -17,47 +17,50 @@
 <%@include file="header.jsp" %>
 
 <!-- Sign IN Form Begins -->
-<div class="cont_principal">
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row">
+<article>
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 class="thin text-center">Sign In To Your Account</h3></div>
+							<p class="text-center text-muted">If You are not a registered user <a href="signup">Click Here</a> to create a new account in our domain. </p>
+							<hr>
+							<div class="panel-body">
+							<form action="./loginCheck" method="post">
+								<div class="top-margin">
+									<label>Email <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" name="username" id="username" required placeholder="email">
+								</div>
+								<div class="top-margin">
+									<label>Password <span class="text-danger">*</span></label>
+									<input type="password" class="form-control" name="password" id="password" required placeholder="password">
+								</div>
 
-  <div class="cont_centrar">
-  <div class="cont_login">
-    <form action="">
-    <div class="cont_tabs_login">
-      <ul class='ul_tabs'>
-        <li class="active"><a href="#" onclick="sign_in()">SIGN IN</a>
-        <span class="linea_bajo_nom"></span>
-        </li>
-        <li><a href="#up" onclick="sign_up()">SIGN UP</a><span class="linea_bajo_nom"></span>
-        </li>
-      </ul>
-      </div>
-  <div class="cont_text_inputs">
-      <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" />
-    
-    <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="emauil_us" />
+								<hr>
 
-    <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" />  
-   <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
-    
-    <a href="#" class="link_forgot_pass d_block" >Forgot Password ?</a>    
-<div class="terms_and_cons d_none">
-    <p><input type="checkbox" name="terms_and_cons" /> <label for="terms_and_cons">Accept  Terms and Conditions.</label></p>
-  
-    </div>
-      </div>
-<div class="cont_btn">
-     <button class="btn_sign">SIGN IN</button>
-      
-      </div>
-      
-    </form>
-    </div>
-    
-  </div>
-  
+								<div class="row">
+									<div class="col-lg-8">
+										<b><a href="">Forgot password?</a></b>
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-danger" type="submit">Sign in</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 
+				</div>
+</article>
+</div>
 </div>
 		<script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script> 
-		<script src="<c:url value='/resource/bootstrap/js/index.js'/>"/></script>
+		
 </body>
 </html>
