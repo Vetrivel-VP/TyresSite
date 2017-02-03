@@ -28,7 +28,7 @@
       <ul class="nav navbar-nav">
       <li><a href="index">Home</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Page 1
+        <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Product
         <span class="caret"></span></a>
         <ul class="dropdown-menu dropdown-content">
           <li><a href="#">Page 1-1</a></li>
@@ -36,7 +36,7 @@
           <li><a href="#">Page 1-3</a></li>
         </ul>
         </li>
-        <li><a href="#">Page 2</a></li>
+        <li><a href="ProductForm">Product</a></li>
         <li><a href="#">Page 3</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

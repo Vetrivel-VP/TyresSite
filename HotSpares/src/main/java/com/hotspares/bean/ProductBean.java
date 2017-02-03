@@ -1,26 +1,11 @@
-package com.hotspares.model;
+package com.hotspares.bean;
 
-import java.io.Serializable;
-
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-
-public class Product implements Serializable {
+public class ProductBean {
 	
-	private static final long serialVersionUID = -723583058586873479L;
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer productid;
+	private Integer productid;
 	private String name;
 	private String description;
 	private Double price;
-	
 	public Integer getProductid() {
 		return productid;
 	}
@@ -46,7 +31,5 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 	
-	
-	
-	
+
 }

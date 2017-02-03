@@ -36,25 +36,25 @@
 							<form>
 								<div class="top-margin">
 									<label>First Name</label>
-									<input type="text" class="form-control" placeholder="firstname">
+									<input type="text" class="form-control" placeholder="firstname" required>
 								</div>
 								<div class="top-margin">
 									<label>Last Name</label>
-									<input type="text" class="form-control" placeholder="lastname">
+									<input type="text" class="form-control" placeholder="lastname" required>
 								</div>
 								<div class="top-margin">
 									<label>Email Address <span class="text-danger">*</span></label>
-									<input type="email" class="form-control" placeholder="email">
+									<input type="email" class="form-control" placeholder="email" required>
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Password <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" placeholder="password">
+										<input type="password" class="form-control" placeholder="password" required>
 									</div>
 									<div class="col-sm-6">
 										<label>Confirm Password <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" placeholder="confirm_password">
+										<input type="password" class="form-control" placeholder="confirm_password" required>
 									</div>
 								</div>
 
