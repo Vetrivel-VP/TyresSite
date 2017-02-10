@@ -49,11 +49,17 @@ public String signin()
 {
 	return "signin";
 }
-@RequestMapping("/signup")
+/*@RequestMapping("/signup")
 public String signup()
 {
 	return "signup";
+}*/
+@RequestMapping("/user")
+public String userList()
+{
+	return "listUsers";
 }
+
 
 @RequestMapping(value="loginCheck",method=RequestMethod.POST)
 public void validateLogin(HttpServletRequest request,HttpServletRequest response,ServletRequest req,ServletResponse res)throws ServletException,IOException

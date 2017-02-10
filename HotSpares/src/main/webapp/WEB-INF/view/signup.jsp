@@ -1,11 +1,15 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> --%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ 
+   <%@page isELIgnored="false" %>
+   <%@include file="header.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content=text.html;>
   <title>SignUp-HotSpares</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/> 
 
@@ -24,7 +28,6 @@
 <br>
 <div class="container">
 <div class="row">
-<article>
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-danger">
 						
@@ -33,28 +36,28 @@
 							<p class="text-center text-muted">If you already have an account <a href="signin">Click here</a> to signin to your account. </p>
 							<hr>
 <div class="panel-body">
-							<form>
+							<form:form method="POST" action="./saveuser" commandName="signupForm">
 								<div class="top-margin">
-									<label>First Name</label>
-									<input type="text" class="form-control" placeholder="firstname" required>
+									<form:label path="first_name">First Name</form:label>
+									<form:input path="first_name"  class="form-control" required="true"/>
 								</div>
 								<div class="top-margin">
-									<label>Last Name</label>
-									<input type="text" class="form-control" placeholder="lastname" required>
+									<form:label path="last_name">Last Name</form:label>
+									<form:input path="last_name" type="text" class="form-control" required="true"/>
 								</div>
 								<div class="top-margin">
-									<label>Email Address <span class="text-danger">*</span></label>
-									<input type="email" class="form-control" placeholder="email" required>
+									<form:label path="email">Email Address <span class="text-danger">*</span></form:label>
+									<form:input path="email" type="email" class="form-control" required="true"/>
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
-										<label>Password <span class="text-danger">*</span></label>
-										<input type="password" class="form-control" placeholder="password" required>
+										<form:label path="password">Password <span class="text-danger">*</span></form:label>
+										<form:input path="password" type="password" class="form-control" required="true"/>
 									</div>
 									<div class="col-sm-6">
 										<label>Confirm Password <span class="text-danger">*</span></label>
-										<input type="password" class="form-control" placeholder="confirm_password" required>
+										<input type="password" class="form-control" required="true"/>
 									</div>
 								</div>
 
@@ -66,12 +69,11 @@
 										<button class="btn btn-danger" type="submit">Register</button>
 									</div>
 								</div>
-							</form>
+							</form:form>
 						</div>
 					</div>
 
 				</div>
-</article>
 </div>
 </div>
 		<script src="<c:url value='/resource/bootstrap/js/bootstrap.min.js'/>"/></script> 

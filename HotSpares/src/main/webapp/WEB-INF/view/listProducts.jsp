@@ -5,12 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>ProductList-HotSpares</title>
 </head>
 <body>
 <center>
-<div style="color: teal; font-size: 30px">Being Java Guys | User
-   Details</div>
+<div style="color: teal; font-size: 30px">Product List</div>
 
   <c:if test="${!empty productList}">
    <table border="1" bgcolor="black" width="600px">

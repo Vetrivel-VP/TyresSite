@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hotspares.model.Product;
+import com.hotspares.service.CategoryService;
 import com.hotspares.service.ProductService;
 
 @Controller
@@ -17,6 +18,7 @@ public class ProductController
 {
 	@Autowired
 	private ProductService productService;
+	
 	
 	public ProductController()
 	{
@@ -26,7 +28,14 @@ public class ProductController
 	@RequestMapping("/ProductForm")
 	public ModelAndView gotoProduct(@ModelAttribute("prdfrm")Product prdfrm) 
 	{
-		  return new ModelAndView("ProductForm");
+		  
+		return new ModelAndView("ProductForm");
+	}
+	
+	@RequestMapping("/addProducts")
+	public String addProducts()
+	{
+		return "addProducts";
 	}
 	
 	

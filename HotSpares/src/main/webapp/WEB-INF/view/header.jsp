@@ -37,7 +37,7 @@
         </ul>
         </li>
         <li><a href="ProductForm">Product</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="listUsers">Users</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
