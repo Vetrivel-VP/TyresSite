@@ -37,5 +37,10 @@ public void setProducts(List<Product> products) {
 	this.products = products;
 }
 
+public String toString()
+{
+	return categoryDetails;
+	
+}
 
 }

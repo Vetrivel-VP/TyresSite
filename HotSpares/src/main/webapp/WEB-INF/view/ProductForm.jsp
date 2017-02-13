@@ -18,8 +18,9 @@
  <div class="container">
  <div >
 <div class="row">
+
 <form:form method="POST" action="./saveProduct" commandName="prdfrm">
-<div class="col-lg-4">
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
 							<h3 class="thin text-center">ADD NEW PRODUCTS</h3></div>
@@ -31,6 +32,14 @@
 									<form:label path="name">Product Name:<span class="text-danger">*</span></form:label>
 									<form:input path="name" class="form-control" required="Please enter valid product name" />
 								</div>
+								<div class="top-margin">
+									<label for="category">Category</label>
+									<br>
+									<c:forEach var="c" items="${categories}">
+									<form:radiobutton path="category.id" value="${c.id}" />${c.categoryDetails}
+									</c:forEach>
+								</div>
+								
 								<div class="top-margin">
 									<form:label path="description">Product Description:<span class="text-danger">*</span></form:label>
 									<form:input path="description" class="form-control" />
@@ -59,59 +68,7 @@
 
 				</div>
 				
-				<div class="col-lg-8">
-					<div class="panel panel-danger">
-						<div class="panel-heading">
-							<h3 class="thin text-center">Products List</h3></div>
-							
-					
-							<div class="panel-body">
-							
-								<center>
-
-
-  <c:if test="${!empty productList}">
-   <table border="1" bgcolor="black" width="600px" class="table table-bordered table-hover">
-    <tr
-     style="background-color: teal; color: white; text-align: center;"
-     height="40px">
-     
-     <td>Product Id</td>
-     <td>Product Name</td>
-   <td>Product Description</td>
-   <td>Product Price</td>
-   
-     <td>Edit</td>
-     <td>Delete</td>
-    </tr>
-   <c:forEach items="${productList}" var="pd">
-     <tr
-      style="background-color: white; color: black; text-align: center;"
-      height="30px">
-      
-      <td><c:out value="${pd.productid}" />
-      </td>
-      <td><c:out value="${pd.name}" />
-      </td>
-      <td><c:out value="${pd.description}" />
-      </td>
-      <td><c:out value="${pd.price}" />
-      </td>
-      <td><a href="editProduct?id=${pd.productid}">Edit</a></td>
-      <td><a href="deleteProduct?id=${pd.productid}">Delete</a></td>
-     </tr>
-    </c:forEach>
-   </table>
-  </c:if>
-  
-</center>
-								
-							
-						</div>
-						
-					</div>
-
-				</div>
+				
 				
 				</form:form>
 
