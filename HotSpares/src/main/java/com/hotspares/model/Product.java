@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 
@@ -25,6 +24,15 @@ public class Product implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="cid")
 	private Category category;
+	@ManyToOne
+	@JoinColumn(name="supplier")
+	private Supplier supplier;
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
 	public Category getCategory() {
 		return category;
 	}

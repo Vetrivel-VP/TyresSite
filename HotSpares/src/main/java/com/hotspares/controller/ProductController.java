@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.hotspares.model.Product;
 import com.hotspares.service.CategoryService;
 import com.hotspares.service.ProductService;
+import com.hotspares.service.SupplierService;
 
 @Controller
 public class ProductController 
@@ -21,6 +22,8 @@ public class ProductController
 	private ProductService productService;
 	@Autowired
 	private CategoryService categoryService;
+	@Autowired
+	private SupplierService supplierService;
 	
 	public ProductController()
 	{
@@ -31,6 +34,7 @@ public class ProductController
 	public ModelAndView gotoProduct(Model model,@ModelAttribute("prdfrm")Product prdfrm) 
 	{
 		  model.addAttribute("categories",categoryService.getCategories());
+		  model.addAttribute("suppliers",supplierService.getSuppliers());
 		return new ModelAndView("ProductForm");
 	}
 	
@@ -83,6 +87,14 @@ public class ProductController
 		
 	}
 	
-
+	@RequestMapping("/ProductsByCategory")
+	public String getProductsByCategory(@RequestParam(name="searchCondition") String searchCondition,
+			Model model){
+		List<Product> products=productService.getList();
+		//Assigning list of products to model attribute products
+		model.addAttribute("listProducts",products);
+		model.addAttribute("searchCondition",searchCondition);
+		return "listProducts";
+	}
 	
 }

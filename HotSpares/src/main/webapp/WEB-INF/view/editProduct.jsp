@@ -9,6 +9,8 @@
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>Spring MVC Form Handling</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
   <h2>Add Product Data</h2>

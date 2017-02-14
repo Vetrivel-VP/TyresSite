@@ -9,6 +9,8 @@
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>NewProduct-HotSpares</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
  <br>
@@ -39,6 +41,16 @@
 									<form:radiobutton path="category.id" value="${c.id}" />${c.categoryDetails}
 									</c:forEach>
 								</div>
+								
+								
+								<div class="top-margin">
+									<label for="supplier">Product Supplier</label>
+									<br>
+									<c:forEach var="s" items="${suppliers}">
+									<form:radiobutton path="supplier.id" value="${s.id}" />${s.name}
+									</c:forEach>
+								</div>
+								
 								
 								<div class="top-margin">
 									<form:label path="description">Product Description:<span class="text-danger">*</span></form:label>

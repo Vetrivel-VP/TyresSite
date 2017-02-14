@@ -7,12 +7,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>ProductList-HotSpares</title>
+ 
+
 </head>
 <body>
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<script>
+$(document).ready(function(){
+	var searchCondition='${searchCondition}';
+	$('.table').DataTable({
+		"lengthMenu":[[3,5,7,-1],[3,5,7,"All"]],
+		"oSearch":{"sSearch":searchCondition}
+	})
+});
+</script>
 <div class="col-lg-12">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
@@ -35,6 +51,7 @@
    <td>Product Description</td>
    <td>Product Price</td>
    <td>Category</td>
+   <td>Product Supplier</td>
      <td>Edit</td>
      <td>Delete</td>
     </tr>
@@ -53,6 +70,7 @@
       </td>
       <td><c:out value="${pd.category}" />
       </td>
+      <td><c:out value="${pd.supplier}" /></td>
       <td><a href="editProduct?id=${pd.productid}"><span class="glyphicon glyphicon-pencil"></span></a></td>
       <td><a href="deleteProduct?id=${pd.productid}"><span class="glyphicon glyphicon-remove"></span></a></td>
      </tr>

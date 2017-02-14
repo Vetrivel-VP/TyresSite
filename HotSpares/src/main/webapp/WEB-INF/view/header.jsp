@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +13,18 @@
   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/header.css'/>"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"  rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+       <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+    <link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet">
+      
+      
+
   
 
 </head>
@@ -28,12 +44,14 @@
       <ul class="nav navbar-nav">
       <li><a href="index">Home</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Product
+        <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Select By Category
         <span class="caret"></span></a>
         <ul class="dropdown-menu dropdown-content">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+        	<c:url var="url1" value="/ProductsByCategory?searchCondition=Tube"></c:url>
+          <li><a href="${url1}">Tube</a></li>
+          <c:url var="url2" value="/ProductsByCategory?searchCondition=Tube Less"></c:url>
+          <li><a href="${url2}">Tube Less</a></li>
+          <li><a href="listProducts">Page 1-3</a></li>
         </ul>
         </li>
         <li><a href="ProductForm">Product</a></li>
