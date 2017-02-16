@@ -7,10 +7,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>ProductList-HotSpares</title>
- 
+ <script>
+$(document).ready(function(){
+	var searchCondition='${searchCondition}';
+	$('.table').DataTable({
+		"lengthMenu":[[3,5,7,-1],[3,5,7,"All"]],
+		"oSearch":{"sSearch":searchCondition}
+	})
+});
+</script>
 
 </head>
 <body>
@@ -20,15 +28,7 @@
 <br>
 <br>
 <br>
-<script>
-$(document).ready(function(){
-	var searchCondition='${searchCondition}';
-	$('.table').DataTable({
-		"lengthMenu":[[3,5,7,-1],[3,5,7,"All"]],
-		"oSearch":{"sSearch":searchCondition}
-	})
-});
-</script>
+
 <div class="col-lg-12">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
@@ -41,13 +41,14 @@ $(document).ready(function(){
 
 
   <c:if test="${!empty productList}">
-   <table border="1" bgcolor="black" width="600px" class="table-responsive table table-bordered table-hover">
+   <table id="example" border="1" bgcolor="black" width="600px" class="table-responsive table table-bordered table-hover">
     <tr
      style="background-color: teal; color: white; text-align: center;"
      height="40px">
      
      <td>Product Id</td>
      <td>Product Name</td>
+     <td>Product Image</td>
    <td>Product Description</td>
    <td>Product Price</td>
    <td>Category</td>
@@ -63,6 +64,9 @@ $(document).ready(function(){
       <td><c:out value="${pd.productid}" />
       </td>
       <td><c:out value="${pd.name}" />
+      </td>
+      <td><c:url var="src" value="/resource/bootstrap/images/${pd.productid }.png"></c:url>
+				<img src="${src }"/>
       </td>
       <td><c:out value="${pd.description}" />
       </td>

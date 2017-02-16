@@ -1,5 +1,10 @@
+
 package com.hotspares.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hotspares.model.Product;
@@ -51,6 +57,20 @@ public class ProductController
 		
 		productService.insertRow(prdfrm);
 		List<Product> ls=productService.getList();
+		MultipartFile prodImage=prdfrm.getImage();
+		if(!prodImage.isEmpty()){
+			Path paths=
+	Paths.get("C:/Users/vetri/git/TyresSite/HotSpares/src/main/webapp/resource/bootstrap/images/"+ prdfrm.getProductid()+".png");
+		try {
+			prodImage.transferTo(new File(paths.toString()));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 		return new ModelAndView("listProducts","productList",ls);
 	}
 	

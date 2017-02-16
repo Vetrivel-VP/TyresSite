@@ -21,7 +21,7 @@
  <div >
 <div class="row">
 
-<form:form method="POST" action="./saveProduct" commandName="prdfrm">
+<form:form method="POST" action="./saveProduct" commandName="prdfrm" enctype="multipart/form-data">
 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
@@ -60,6 +60,10 @@
 								<div class="top-margin">
 									<form:label path="price">Product Price:<span class="text-danger">*</span></form:label>
 									<form:input path="price" class="form-control"  />
+								</div>
+								<div class="top-margin">
+									<form:label path="image">Product Image:<span class="text-danger">*</span></form:label>
+									<form:input path="image" type="file" />
 								</div>
 								
 								<hr>

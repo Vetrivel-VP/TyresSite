@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 
@@ -27,6 +30,16 @@ public class Product implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="supplier")
 	private Supplier supplier;
+	@Transient 
+	private MultipartFile image;
+	
+	
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 	public Supplier getSupplier() {
 		return supplier;
 	}

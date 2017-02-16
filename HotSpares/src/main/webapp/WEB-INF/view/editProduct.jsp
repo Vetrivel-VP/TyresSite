@@ -14,7 +14,7 @@
  </head>
  <body>
   <h2>Add Product Data</h2>
-  <form:form method="POST" action="./updateProduct" commandName="prdfrm">
+  <form:form method="POST" action="./updateProduct" commandName="prdfrm" enctype="multipart/form-data">
       <table>
        <tr>
            <td><form:label path="productid">Product ID:</form:label></td>
