@@ -6,45 +6,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>ProductList-HotSpares</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>ProductList-HotSpares</title>
- <script>
-$(document).ready(function(){
-	var searchCondition='${searchCondition}';
-	$('.table').DataTable({
-		"lengthMenu":[[3,5,7,-1],[3,5,7,"All"]],
-		"oSearch":{"sSearch":searchCondition}
-	})
-});
+<link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+ 
+<script src="<c:url value='/resource/bootstrap/js/jquery-3.1.1.min.js'/>"></script>
+ <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+		var searchCondition='${searchCondition}';
+		$('#myTable').dataTable({
+			"lengthMenu":[[3,5,7,-1],[3,5,7,"All"]],
+			"oSearch":{"sSearch":searchCondition}
+		})
+	});
 </script>
+
+ 
+  <style>
+  p{
+	font-family:"Times New Roman", Times, serif;
+	font-size:36px;}
+  </style>
+
 
 </head>
 <body>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+
 
 <div class="col-lg-12">
+					
 					<div class="panel panel-danger">
+						
+						<br>
+					<br>
+					<br>
 						<div class="panel-heading">
-							<h3 class="thin text-center">Products List</h3></div>
+							
+							<p class="thin text-center" >PRODUCT LIST</p></div>
 							
 					
-							<div class="panel-body">
+							</div>
 							
 								<center>
 
 
   <c:if test="${!empty productList}">
-   <table id="example" border="1" bgcolor="black" width="600px" class="table-responsive table table-bordered table-hover">
-    <tr
-     style="background-color: teal; color: white; text-align: center;"
-     height="40px">
+   <table id="myTable"  class="table table-hover">
+    <thead>
+    <tr>
      
      <td>Product Id</td>
      <td>Product Name</td>
@@ -55,9 +71,9 @@ $(document).ready(function(){
    <td>Product Supplier</td>
      <td>Edit</td>
      <td>Delete</td>
-    </tr>
+    </tr></thead>
    <c:forEach items="${productList}" var="pd">
-     <tr
+     <tbody><tr
       style="background-color: white; color: black; text-align: center;"
       height="30px">
       
@@ -66,7 +82,7 @@ $(document).ready(function(){
       <td><c:out value="${pd.name}" />
       </td>
       <td><c:url var="src" value="/resource/bootstrap/images/${pd.productid }.png"></c:url>
-				<img src="${src }"/>
+				<img width="60px" height="60px" src="${src }"/>
       </td>
       <td><c:out value="${pd.description}" />
       </td>
@@ -77,7 +93,7 @@ $(document).ready(function(){
       <td><c:out value="${pd.supplier}" /></td>
       <td><a href="editProduct?id=${pd.productid}"><span class="glyphicon glyphicon-pencil"></span></a></td>
       <td><a href="deleteProduct?id=${pd.productid}"><span class="glyphicon glyphicon-remove"></span></a></td>
-     </tr>
+     </tr></tbody>
     </c:forEach>
    </table>
   </c:if>
@@ -85,9 +101,9 @@ $(document).ready(function(){
 </center>
 								
 							
-						</div>
 						
-					</div>
+						
+					
 <a href="ProductForm" class="btn btn-warning"> Add New Product</a>
 				</div>
 </body>

@@ -11,15 +11,16 @@
   
   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/header.css'/>"/>
-  <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">  
- 
+     <script src="<c:url value='/resource/bootstrap/js/jquery-3.1.1.min.js'/>"></script>
+ <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
   
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+ 
+  <script src="<c:url value='/resource/bootstrap/js/jquery-3.1.1.min.js'/>"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          
-  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <script src="https://cdn.datatables.net/1.10.13/js/dataTables.jqueryui,min.js"></script>     
-  <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-
+  
+ 
     
 
   
@@ -35,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">HotSpares</a>
+      <a class="navbar-brand" href="index"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/logo.png'/>" /></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">

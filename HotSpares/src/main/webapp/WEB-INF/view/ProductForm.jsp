@@ -33,6 +33,7 @@
 								<div class="top-margin">
 									<form:label path="name">Product Name:<span class="text-danger">*</span></form:label>
 									<form:input path="name" class="form-control" required="Please enter valid product name" />
+									
 								</div>
 								<div class="top-margin">
 									<label for="category">Category</label>
