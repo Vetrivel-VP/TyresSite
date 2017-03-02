@@ -32,8 +32,8 @@
 							
 								<div class="top-margin">
 									<form:label path="name">Product Name:<span class="text-danger">*</span></form:label>
-									<form:input path="name" class="form-control" required="Please enter valid product name" />
-									
+									<form:input path="name" class="form-control" />
+									<form:errors path="name" cssStyle="color: #ff0000;"></form:errors>
 								</div>
 								<div class="top-margin">
 									<label for="category">Category</label>
@@ -56,11 +56,13 @@
 								<div class="top-margin">
 									<form:label path="description">Product Description:<span class="text-danger">*</span></form:label>
 									<form:input path="description" class="form-control" />
+									<form:errors path="description" cssStyle="color: #ff0000;"></form:errors>
 								</div>
 								
 								<div class="top-margin">
 									<form:label path="price">Product Price:<span class="text-danger">*</span></form:label>
 									<form:input path="price" class="form-control"  />
+									<form:errors path="price" cssStyle="color: #ff0000;"></form:errors>
 								</div>
 								<div class="top-margin">
 									<form:label path="image">Product Image:<span class="text-danger">*</span></form:label>

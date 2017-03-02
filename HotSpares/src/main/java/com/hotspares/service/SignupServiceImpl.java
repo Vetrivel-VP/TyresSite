@@ -46,4 +46,10 @@ public class SignupServiceImpl implements SignupService {
 		return signupDao.deleteRow(id);
 	}
 
+	/*@Transactional(propagation=Propagation.SUPPORTS)
+	public void saveCustomer(Signup signup) {
+		// TODO Auto-generated method stub
+		signupDao.saveCustomer(signup);
+	}*/
+
 }

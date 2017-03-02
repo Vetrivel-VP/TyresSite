@@ -6,6 +6,8 @@ import com.hotspares.model.Signup;
 
 public interface SignupDao 
 {
+	/*void saveCustomer(Signup signup);*/
+	
 	public int insertRow(Signup sup);
 
 	 public List<Signup> getList();

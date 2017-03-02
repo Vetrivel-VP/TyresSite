@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,8 +23,11 @@ public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer productid;
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String description;
+	@Min(value=5)
 	private Double price;
 	@ManyToOne
 	@JoinColumn(name="cid")

@@ -33,14 +33,14 @@
 							<p class="text-center text-muted">If You are not a registered user <a href="signup">Click Here</a> to create a new account in our domain. </p>
 							<hr>
 							<div class="panel-body">
-							<form action="./loginCheck" method="post">
+							<form action="<c:url value="/j_spring_security_check"></c:url>" method="post" >
 								<div class="top-margin">
 									<label>Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="username" id="username" required placeholder="email">
+									<input type="text" class="form-control" name="j_username" id="j_username" required placeholder="email">
 								</div>
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control" name="password" id="password" required placeholder="password">
+									<input type="password" class="form-control" name="j_password" id="j_password" required placeholder="password">
 								</div>
 
 								<hr>

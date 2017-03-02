@@ -9,6 +9,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +22,7 @@ import com.hotspares.model.Product;
 import com.hotspares.service.CategoryService;
 import com.hotspares.service.ProductService;
 import com.hotspares.service.SupplierService;
+import com.hotspares.validator.ProductValidator;
 
 @Controller
 public class ProductController 
@@ -30,6 +33,8 @@ public class ProductController
 	private CategoryService categoryService;
 	@Autowired
 	private SupplierService supplierService;
+	@Autowired
+	private ProductValidator validator;
 	
 	public ProductController()
 	{
@@ -52,9 +57,13 @@ public class ProductController
 	
 	
 	@RequestMapping(value = "saveProduct", method = RequestMethod.POST)
-	public ModelAndView saveProduct(@ModelAttribute("prdfrm")Product prdfrm)
+	public ModelAndView saveProduct(@ModelAttribute("prdfrm")Product prdfrm,BindingResult result)
 	{
-		
+		validator.validate(prdfrm, result);
+		if(result.hasErrors())
+		{
+			return new ModelAndView("ProductForm");
+		}
 		productService.insertRow(prdfrm);
 		List<Product> ls=productService.getList();
 		MultipartFile prodImage=prdfrm.getImage();

@@ -11,7 +11,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hotspares.model.Product;
+import com.hotspares.model.Authorities;
+import com.hotspares.model.Cart;
+/*import com.hotspares.model.Authorities;*/
 import com.hotspares.model.Signup;
 
 @Repository("SignupDao")
@@ -24,7 +26,27 @@ public class SignupDaoImpl implements SignupDao {
 	public int insertRow(Signup sup) {
 		Session session = sessionFactory.openSession();
 		  Transaction tx = session.beginTransaction();
-		  session.saveOrUpdate(sup);
+		 
+		  //setting the role for the new user
+			String emailid=sup.getEmail();
+			String role="ROLE_USER";
+			
+			Authorities authorities=new Authorities();
+			
+			authorities.setEmailid(emailid);
+			authorities.setRole(role);
+			//saving the authority of the user
+			session.save(authorities);
+			
+			Cart cart=new Cart();
+			sup.setCart(cart);
+			cart.setSignup(sup);
+			
+			//setting the user active
+			
+			sup.setEnabled(true);
+		//saving the new updates	
+			session.saveOrUpdate(sup);	
 		  session.flush();
 		  tx.commit();
 		  
@@ -75,5 +97,28 @@ public class SignupDaoImpl implements SignupDao {
 		  session.close();
 		  return (Integer) ids;
 	}
+
+	/*@Transactional(propagation=Propagation.SUPPORTS)
+	public void saveCustomer(Signup signup) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		signup.getUsers().setEnabled(true);
+		
+		String username=signup.getUsers().getUsername();
+		String role="ROLE_USER";
+		
+		Authorities authorities=new Authorities();
+		
+		authorities.setUsername(username);
+		authorities.setRole(role);
+		
+		session.save(authorities);
+		Cart cart=new Cart();
+		signup.setCart(cart);
+		cart.setSignup(signup);
+		session.save(signup);
+		session.flush();
+		session.close();
+	}*/
 
 }
