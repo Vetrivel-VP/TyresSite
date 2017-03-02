@@ -45,11 +45,14 @@ public class SignupController
 		catch(Exception e)
 		{
 			model.addAttribute("duplicateEmailid", "Email Id is Already exist.");
+			model.addAttribute("signup", "User Registered Successfully");
+			
 			return new ModelAndView("signup");
 		}
 		
-		List<Signup> ls=signupService.getList();
-		return new ModelAndView("signup","signupList",ls);
+		/*List<Signup> ls=signupService.getList();
+		return new ModelAndView("signup","signupList",ls);*/
+		return new ModelAndView("signin");
 	}
 	
 	@RequestMapping("/listUsers")

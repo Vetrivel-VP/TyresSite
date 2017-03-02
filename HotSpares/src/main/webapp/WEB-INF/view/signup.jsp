@@ -35,7 +35,7 @@
 						<div class="panel-heading">
 							<h3 class="thin text-center">Register A New Account</h3></div>
 							<p class="text-center text-muted">If you already have an account <a href="signin">Click here</a> to signin to your account. </p>
-						
+							
 							<hr>
 <div class="panel-body">
 							<form:form method="POST" action="./saveuser" commandName="signupForm" id="passwordForm">

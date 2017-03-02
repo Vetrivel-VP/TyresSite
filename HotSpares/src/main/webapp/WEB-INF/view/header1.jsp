@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
     <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,16 +39,8 @@
       <a class="navbar-brand" href="index"><img class="img-responsive" src="<c:url value='/resource/bootstrap/images/logo.png'/>" /></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-   
       <ul class="nav navbar-nav">
-      
-       <c:if test="${pageContext.request.userPrincipal.name !=null }">
-   <!-- http://localhost:8080/project1/admin/product/productform -->
-      
       <li><a href="index">Home</a></li>
-     <c:if test="${pageContext.request.userPrincipal.name ==null }"> 
-     <!--Only For User Access  -->
-      <security:authorize access="hasRole('ROLE_ADMIN')">
       <li class="dropdown">
         <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Select By Category
         <span class="caret"></span></a>
@@ -62,27 +53,13 @@
         </ul>
         </li>
         <li><a href="ProductForm">Product</a></li>
-        <li><a href="listUsers">Users</a></li>
-	</security:authorize>
-      </c:if>
-      </c:if>
+        <li><a href="listProducts">Users</a></li>
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
-        <c:if test="${pageContext.request.userPrincipal.name ==null }">
-        
         
         <li><a href="signin"><span class="glyphicon glyphicon-log-in"></span> SignIn</a></li>
         <li><a href="signup"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
-        </c:if>
-        <c:if test="${pageContext.request.userPrincipal.name !=null }">
-        <li><a href="">welcome ${pageContext.request.userPrincipal.name }</a></li>
-        <li><a href="signin"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
-        </c:if>
-        
-	
       </ul>
-      
     </div>
   </div>
 </nav>

@@ -31,6 +31,9 @@
 						<div class="panel-heading">
 							<h3 class="thin text-center">Sign In To Your Account</h3></div>
 							<p class="text-center text-muted">If You are not a registered user <a href="signup">Click Here</a> to create a new account in our domain. </p>
+							<div class="well well-danger">${error }</div>
+							${signup }
+							${logout}
 							<hr>
 							<div class="panel-body">
 							<form action="<c:url value="/j_spring_security_check"></c:url>" method="post" >
