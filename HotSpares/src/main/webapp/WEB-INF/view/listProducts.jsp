@@ -34,7 +34,7 @@
 
 
 </head>
-<body>
+<body ng-app="app" ng-controller="ProductController">
 
 
 
@@ -71,6 +71,7 @@
    <td>Product Supplier</td>
      <td>Edit</td>
      <td>Delete</td>
+     <td>Cart</td>
     </tr></thead>
    <c:forEach items="${productList}" var="pd">
      <tbody><tr
@@ -93,6 +94,7 @@
       <td><c:out value="${pd.supplier}" /></td>
       <td><a href="editProduct?id=${pd.productid}"><span class="glyphicon glyphicon-pencil"></span></a></td>
       <td><a href="deleteProduct?id=${pd.productid}"><span class="glyphicon glyphicon-remove"></span></a></td>
+      <td><a ng-click="addToCart(${pd.productid })"> <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
      </tr></tbody>
     </c:forEach>
    </table>
@@ -106,5 +108,6 @@
 					
 <a href="ProductForm" class="btn btn-warning"> Add New Product</a>
 				</div>
+				<script src="<c:url value='/resource/bootstrap/js/controller.js'/>"></script>
 </body>
 </html>

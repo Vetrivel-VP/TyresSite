@@ -11,7 +11,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-        
+       <style>
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	text-align:center;
+}
+
+.logout {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #113300;
+	background-color: #88ff4d;
+	border-color: #bce8f1;
+	text-align:center;
+}
+
+#login-box {
+	width: 300px;
+	padding: 20px;
+	margin: 100px auto;
+	background: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 1px solid #000;
+}
+</style> 
  
  </head>
 <body>
@@ -31,9 +63,14 @@
 						<div class="panel-heading">
 							<h3 class="thin text-center">Sign In To Your Account</h3></div>
 							<p class="text-center text-muted">If You are not a registered user <a href="signup">Click Here</a> to create a new account in our domain. </p>
-							<div class="well well-danger">${error }</div>
-							${signup }
-							${logout}
+							<c:if test="${not empty error}">
+							<div class="error">${error}</div>
+							</c:if>
+							
+							
+							<c:if test="${not empty logout}">
+								<div class="logout">${logout}</div>
+							</c:if>
 							<hr>
 							<div class="panel-body">
 							<form action="<c:url value="/j_spring_security_check"></c:url>" method="post" >

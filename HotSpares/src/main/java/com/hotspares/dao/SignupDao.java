@@ -18,4 +18,5 @@ public interface SignupDao
 
 	 public int deleteRow(int id);
 
+	 public Signup getSignupByEmail(String email);
 }

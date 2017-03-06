@@ -15,6 +15,8 @@ public interface ProductDao {
 	 public int updateRow(Product prd);
 
 	 public int deleteRow(int id);
+	 
+	 public Product getProductById(int productId);
 
 }
 

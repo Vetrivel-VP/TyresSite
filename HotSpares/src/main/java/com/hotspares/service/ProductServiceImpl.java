@@ -46,6 +46,12 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productDao.deleteRow(id);
 	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	public Product getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return productDao.getProductById(productId);
+	}
 	
 	
 	

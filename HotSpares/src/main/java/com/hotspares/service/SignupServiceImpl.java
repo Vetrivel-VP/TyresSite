@@ -46,6 +46,14 @@ public class SignupServiceImpl implements SignupService {
 		return signupDao.deleteRow(id);
 	}
 
+	@Transactional(propagation=Propagation.SUPPORTS)
+	public Signup getSignupByEmail(String email) {
+		// TODO Auto-generated method stub
+		return signupDao.getSignupByEmail(email);
+	}
+
+	
+
 	/*@Transactional(propagation=Propagation.SUPPORTS)
 	public void saveCustomer(Signup signup) {
 		// TODO Auto-generated method stub

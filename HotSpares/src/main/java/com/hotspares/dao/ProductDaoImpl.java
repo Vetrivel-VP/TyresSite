@@ -74,6 +74,15 @@ public class ProductDaoImpl implements ProductDao {
 		  session.close();
 		  return (Integer) ids;
 	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	public Product getProductById(int productId) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		Product product=(Product)session.get(Product.class, productId);
+		session.close();
+		return product;
+	}
 	
 	
 }

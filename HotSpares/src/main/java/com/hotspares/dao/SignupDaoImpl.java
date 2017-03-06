@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -97,6 +98,21 @@ public class SignupDaoImpl implements SignupDao {
 		  session.close();
 		  return (Integer) ids;
 	}
+
+	@Transactional(propagation=Propagation.SUPPORTS)
+	public Signup getSignupByEmail(String email) {
+		// TODO Auto-generated method stub
+		
+		Session session = sessionFactory.openSession();
+		Query query=session.createQuery("from Signup where email=?");
+		query.setString(0, email);
+		Signup signup=(Signup)query.uniqueResult();
+		session.close();
+		signup.getEmail();
+		return signup;
+	}
+
+	
 
 	/*@Transactional(propagation=Propagation.SUPPORTS)
 	public void saveCustomer(Signup signup) {

@@ -6,7 +6,6 @@ import com.hotspares.model.Signup;
 
 public interface SignupService 
 {
-	/*void saveCustomer(Signup signup);*/
 	
 	public int insertRow(Signup sup);
 
@@ -17,4 +16,7 @@ public interface SignupService
 	 public int updateRow(Signup sup);
 
 	 public int deleteRow(int id);
+	 
+	 public Signup getSignupByEmail(String email);
+	 
 }
