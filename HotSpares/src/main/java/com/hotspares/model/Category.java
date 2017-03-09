@@ -1,5 +1,6 @@
 package com.hotspares.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,9 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Category 
+public class Category implements Serializable
 
 {
+	private static final long serialVersionUID = -723583058586873479L;
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;

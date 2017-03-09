@@ -16,7 +16,7 @@ public interface ProductService {
 
 	 public int deleteRow(int id);
 
-	public Product getProductById(int productId);
+	public Product getProductById(int productid);
 
 
 }

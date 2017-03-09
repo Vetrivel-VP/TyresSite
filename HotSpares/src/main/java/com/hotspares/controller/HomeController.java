@@ -46,6 +46,13 @@ public String gotoHome1()
 {
 	return "index";
 }
+
+@RequestMapping("/viewProducts")
+public String listproducts()
+{
+	return "viewProducts";
+}
+
 //signin?error, signin?logout, signin
 @RequestMapping("/signin")
 public String signin(@RequestParam(value="error",required=false) String error,

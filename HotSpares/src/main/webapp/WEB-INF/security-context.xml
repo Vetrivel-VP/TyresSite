@@ -14,7 +14,7 @@
     <security:intercept-url pattern="/home" access="permitAll"/>
     <security:intercept-url pattern="/signin" access="permitAll"/>
     <security:intercept-url pattern="/ProductForm/**" access="hasAnyRole('ROLE_ADMIN')"/>
-    <security:intercept-url pattern="/listProducts" access="hasAnyRole('ROLE_ADMIN')"/>
+    
     <security:intercept-url pattern="/signup" access="permitAll"/>
    
 

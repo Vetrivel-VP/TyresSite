@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -125,5 +126,15 @@ public class ProductController
 		model.addAttribute("searchCondition",searchCondition);
 		return "listProducts";
 	}
+	
+	/*@RequestMapping("viewProducts")
+	public String viewProducts(@PathVariable int id,Model model)
+	{
+		Product product=productService.getProductById(id);
+		model.addAttribute("product",product);
+		return "viewProducts";
+				
+	
+	}*/
 	
 }

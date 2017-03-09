@@ -16,8 +16,8 @@
  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
   
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-  <script src="<c:url value='/resource/bootstrap/js/jquery-3.1.1.min.js'/>"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script> 
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          
   
@@ -47,6 +47,7 @@
    <!-- http://localhost:8080/project1/admin/product/productform -->
       
       <li><a href="index">Home</a></li>
+      
      
      <c:if test="${pageContext.request.userPrincipal.name !=null }">
      <!--Only For User Access  -->
@@ -68,9 +69,10 @@
         </ul>
         </li>
         <li><a href="ProductForm">Product</a></li>
-        <li><a href="listProducts">Product List</a></li>
+        
         <li><a href="listUsers">Users</a></li>
 	</security:authorize>
+	<li><a href="listProducts">Product List</a></li>
       </c:if>
       
       </ul>

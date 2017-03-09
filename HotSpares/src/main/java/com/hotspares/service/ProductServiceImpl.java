@@ -48,9 +48,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Transactional(propagation=Propagation.SUPPORTS)
-	public Product getProductById(int productId) {
+	public Product getProductById(int productid) {
 		// TODO Auto-generated method stub
-		return productDao.getProductById(productId);
+		return productDao.getProductById(productid);
 	}
 	
 	
