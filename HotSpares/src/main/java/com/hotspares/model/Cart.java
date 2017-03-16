@@ -24,6 +24,8 @@ private double grandTotal;
 @OneToOne
 private Signup signup;
 
+
+
 @OneToMany(mappedBy="cart",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 private List<CartItem> cartItems;
 public List<CartItem> getCartItems() {

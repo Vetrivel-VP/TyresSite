@@ -35,38 +35,50 @@
 									<form:input path="name" class="form-control" />
 									<form:errors path="name" cssStyle="color: #ff0000;"></form:errors>
 								</div>
-								<div class="top-margin">
+								<br>
+									<div class="row">
+									<div class="col-sm-6">
 									<label for="category">Category</label>
 									<br>
 									<c:forEach var="c" items="${categories}">
 									<form:radiobutton path="category.id" value="${c.id}" />${c.categoryDetails}
 									</c:forEach>
-								</div>
-								
-								
-								<div class="top-margin">
+									</div>
+									<div class="col-sm-6">
 									<label for="supplier">Product Supplier</label>
 									<br>
 									<c:forEach var="s" items="${suppliers}">
 									<form:radiobutton path="supplier.id" value="${s.id}" />${s.name}
 									</c:forEach>
-								</div>
+									</div>
+									</div>
 								
-								
+								<br>
+									<div class="row">
+									<div class="col-sm-4">
+									<form:label path="pquantity">Product Quantity:<span class="text-danger">*</span></form:label>
+									</div>
+									<div class="col-sm-8">
+									<form:input path="pquantity"  type="number" min="1" placeholder="can't leave empty" class="form-control" />
+									</div>
+									<form:errors path="pquantity" cssStyle="color: #ff0000;"></form:errors>
+								 </div>
+								<br>
 								<div class="top-margin">
 									<form:label path="description">Product Description:<span class="text-danger">*</span></form:label>
 									<form:input path="description" class="form-control" />
 									<form:errors path="description" cssStyle="color: #ff0000;"></form:errors>
 								</div>
-								
+								<br>
 								<div class="top-margin">
 									<form:label path="price">Product Price:<span class="text-danger">*</span></form:label>
 									<form:input path="price" class="form-control"  />
 									<form:errors path="price" cssStyle="color: #ff0000;"></form:errors>
 								</div>
+								<br>
 								<div class="top-margin">
 									<form:label path="image">Product Image:<span class="text-danger">*</span></form:label>
-									<form:input path="image" type="file" />
+									<form:input path="image" type="file"  />
 								</div>
 								
 								<hr>

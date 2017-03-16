@@ -23,10 +23,13 @@ public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer productid;
+	private Integer pquantity;
 	@NotEmpty
 	private String name;
 	@NotEmpty
 	private String description;
+	
+	
 	@Min(value=5)
 	private Double price;
 	@ManyToOne
@@ -37,26 +40,6 @@ public class Product implements Serializable {
 	private Supplier supplier;
 	@Transient 
 	private MultipartFile image;
-	
-	
-	public MultipartFile getImage() {
-		return image;
-	}
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	public Supplier getSupplier() {
-		return supplier;
-	}
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-	public Category getCategory() {
-		return category;
-	}
-	public void setCategory(Category category) {
-		this.category = category;
-	}
 	public Integer getProductid() {
 		return productid;
 	}
@@ -75,12 +58,40 @@ public class Product implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public Integer getPquantity() {
+		return pquantity;
+	}
+	public void setPquantity(Integer pquantity) {
+		this.pquantity = pquantity;
+	}
 	public Double getPrice() {
 		return price;
 	}
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+	
+	
+	
 	
 	
 	

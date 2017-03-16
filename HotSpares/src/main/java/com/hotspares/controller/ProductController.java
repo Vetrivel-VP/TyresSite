@@ -127,7 +127,7 @@ public class ProductController
 		return "listProducts";
 	}
 	
-	/*@RequestMapping("viewProducts")
+	@RequestMapping("/viewProducts/{id}")
 	public String viewProducts(@PathVariable int id,Model model)
 	{
 		Product product=productService.getProductById(id);
@@ -135,6 +135,6 @@ public class ProductController
 		return "viewProducts";
 				
 	
-	}*/
+	}
 	
 }

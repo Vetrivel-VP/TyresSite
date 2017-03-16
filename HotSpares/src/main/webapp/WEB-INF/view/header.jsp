@@ -11,12 +11,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/bootstrap.min.css'/>"/>
+  <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/w3.css'/>"/>
   <link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/header.css'/>"/>
      <script src="<c:url value='/resource/bootstrap/js/jquery-3.1.1.min.js'/>"></script>
  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
   
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script> 
+  <script src="<c:url value='/resource/bootstrap/js/angular.min.js'/>"></script>
   
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          
@@ -73,6 +74,7 @@
         <li><a href="listUsers">Users</a></li>
 	</security:authorize>
 	<li><a href="listProducts">Product List</a></li>
+	<li><a href="cart">Cart</a></li>
       </c:if>
       
       </ul>

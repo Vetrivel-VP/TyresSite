@@ -33,13 +33,13 @@
 
 
 </head>
-<body ng-app="myApp">
+<body >
 
 
 
 
 
-<div class="col-lg-12" ng-controller="ProductController">
+<div class="col-lg-12" >
 					
 					<div class="panel panel-danger">
 						
@@ -64,12 +64,13 @@
      <td>Product Id</td>
      <td>Product Name</td>
      <td>Product Image</td>
+    <security:authorize access="hasRole('ROLE_ADMIN')"> <td>Product Quantity</td></security:authorize>
    <td>Product Description</td>
    
    <td>Product Price</td>
    <td>Category</td>
    <td>Product Supplier</td>
-    <td>Quantity</td>
+    
    <security:authorize access="hasRole('ROLE_ADMIN')">
      <td>Edit</td>
      <td>Delete</td>
@@ -90,6 +91,8 @@
       <td><c:url var="src" value="/resource/bootstrap/images/${pd.productid }.png"></c:url>
 				<img width="60px" height="60px" src="${src }"/>
       </td>
+      <security:authorize access="hasRole('ROLE_ADMIN')"><td><c:out value="${pd.pquantity}" />
+      </td></security:authorize>
       <td><c:out value="${pd.description}" />
       </td>
       
@@ -98,15 +101,14 @@
       <td><c:out value="${pd.category}" />
       </td>
       <td><c:out value="${pd.supplier}" /></td>
-      <td><span>${quant}</span></td>
+      
       <security:authorize access="hasRole('ROLE_ADMIN')">
       <td><a href="editProduct?id=${pd.productid}"><span class="glyphicon glyphicon-pencil"></span></a></td>
       <td><a href="deleteProduct?id=${pd.productid}"><span class="glyphicon glyphicon-remove"></span></a></td>
       </security:authorize>
       <%-- <td><a href="viewProducts?id=${pd.productid }"><span class="glyphicon glyphicon-info-sign"></span></a></td> --%>
       <security:authorize access="hasRole('ROLE_USER')">
-      
-      <td><a href="" ng-click="addToCart(${pd.productid })"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+      <td><a href="viewProducts/${pd.productid}" ><span class="glyphicon glyphicon-info-sign"></span></a></td>
      </security:authorize>
      </tr></tbody>
     </c:forEach>

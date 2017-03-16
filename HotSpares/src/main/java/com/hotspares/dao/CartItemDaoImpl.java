@@ -2,6 +2,7 @@ package com.hotspares.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,8 +20,11 @@ public class CartItemDaoImpl implements CartItemDao
 	public void addCartItem(CartItem cartItem) 
 	{
 		Session session=sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
 		   session.saveOrUpdate(cartItem);
-		  // session.flush();
+		   System.out.println("CartItemDao query get updated");
+		   session.flush();
+		   tx.commit();
 		   session.close();
 
 	}

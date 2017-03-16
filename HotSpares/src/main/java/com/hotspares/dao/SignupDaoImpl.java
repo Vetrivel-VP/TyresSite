@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -108,7 +108,7 @@ public class SignupDaoImpl implements SignupDao {
 		query.setString(0, email);
 		Signup signup=(Signup)query.uniqueResult();
 		session.close();
-		signup.getEmail();
+		//signup.getEmail();
 		return signup;
 	}
 

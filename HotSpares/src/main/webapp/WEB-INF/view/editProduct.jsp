@@ -25,6 +25,12 @@
            <td><form:label path="name">Product Name:</form:label></td>
            <td><form:input path="name" value="${prod.name}"/></td>
        </tr>
+       
+       <tr>
+           <td><form:label path="pquantity">Product Quantity:</form:label></td>
+           <td><form:input path="pquantity" value="${prod.pquantity}"/></td>
+       </tr>
+       
        <tr>
            <td><form:label path="description">Product Description:</form:label></td>
            <td><form:input path="description" value="${prod.description}"/></td>

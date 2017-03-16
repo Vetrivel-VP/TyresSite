@@ -5,18 +5,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value='/resource/bootstrap/css/card.css'/>"/>
-<title>Insert title here</title>
 
+
+<title>Insert title here</title>
+<style>
+
+
+</style>
 </head>
-<body >
-	<div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+<body ng-app="myApp">
+	<br>
+	<br>
+	<br>
+	<div align="center">
+		<div class="w3-container" ng-controller="ProductController" >
+		<h3>${product.name}</h3>
+		<div class="w3-card-12" style="width:50%;height:50%" >
+		<p align="center"><c:url var="src" value="/resource/bootstrap/images/${product.productid }.png"></c:url>
+				<img width="60px" height="60px" src="${src }"  style="width:50%;height:30%"/></p>
+			<div class="w3-container w3-center">
+			<p>
+			Rs.${product.price}/-</p>
+			<hr>
+			<p>${product.description}
+			
+			</p>
+			<security:authorize access="hasRole('ROLE_USER')"> <p>Add To Cart </p><p><a href="" ng-click="addToCart(${product.productid })"><span class="glyphicon glyphicon-shopping-cart"></span></a></p></security:authorize>
+		</div>
+		</div>
+		
+		</div></div>
+				
+				
+				<script src="<c:url value="/resource/bootstrap/js/controller.js"></c:url>"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.hotspares.controller;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +10,22 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hotspares.model.Product;
+import com.hotspares.service.ProductService;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	private ProductService productService;
 
 	public HomeController() {
 		//super();
@@ -41,11 +50,25 @@ public String aboutus()
 	return "aboutus";
 }
 
+
 @RequestMapping("/index")
 public String gotoHome1()
 {
 	return "index";
 }
+/*@RequestMapping("/index")
+public ModelAndView gotoHome1()
+{
+	List<Product> ls=productService.getList();
+	return new ModelAndView("index","plist",ls);
+}*/
+
+@RequestMapping("/cart")
+public String gotocart()
+{
+	return "cart";
+}
+
 
 @RequestMapping("/viewProducts")
 public String listproducts()
